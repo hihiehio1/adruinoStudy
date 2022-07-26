@@ -1,8 +1,8 @@
 int i =0;
 void setup() 
 {
- pinMode(5, OUTPUT); // 스위치는 입력신호!
- pinMode(6, OUTPUT);  // 스위치는 입력신호!
+ pinMode(5, OUTPUT); 
+ pinMode(6, OUTPUT); 
  pinMode(7, OUTPUT);
  pinMode(10,INPUT);
 
