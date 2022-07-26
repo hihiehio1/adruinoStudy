@@ -1,28 +1,27 @@
-int Pin = A0;    // 가변저항(아날로그) : A0
-int sensorValue = 0;  // 아날로그 센서 값 변수
- 
-void setup() {
-  pinMode(5, OUTPUT);// 빨강 LED 출력모드 설정
-  pinMode(6, OUTPUT);// 파강 LED 출력모드 설정
-  pinMode(7, OUTPUT);// 노강 LED 출력모드 설정
-}
- 
-void loop() {
-  sensorValue = analogRead(Pin); 
-  // 아날로그 센서 값 읽어서 변수에 저장
- 
-  digitalWrite(5, HIGH); // 빨강 LED 켜짐
-  delay(sensorValue); // 센서 값 초 기다림
-  digitalWrite(5, LOW); //빨강 LED 꺼짐
-  delay(sensorValue); // 센서 값 초 기다림
+int i =0;
+void setup() 
+{
+ pinMode(5, OUTPUT); // 스위치는 입력신호!
+ pinMode(6, OUTPUT);  // 스위치는 입력신호!
+ pinMode(7, OUTPUT);
+ pinMode(10,INPUT);
 
-  digitalWrite(6, HIGH); // 빨강 LED 켜짐
-  delay(sensorValue); // 센서 값 초 기다림
-  digitalWrite(6, LOW); //빨강 LED 꺼짐
-  delay(sensorValue); // 센서 값 초 기다림
-
-  digitalWrite(7, HIGH); // 빨강 LED 켜짐
-  delay(sensorValue); // 센서 값 초 기다림
-  digitalWrite(7, LOW); //빨강 LED 꺼짐
-  delay(sensorValue); // 센서 값 초 기다림
 }
+
+void loop()
+{
+ if(digitalRead(10)==HIGH)
+ {
+  digitalWrite(5, (i%3)==0);
+  digitalWrite(6, (i%3)==1);
+  digitalWrite(7, (i%3)==2);
+ }
+ else if(digitalRead(10)==LOW)
+ {
+  digitalWrite(5, LOW);
+  digitalWrite(6, LOW);
+  digitalWrite(7, LOW);
+ }
+ i++;
+ delay(500);
+}                   
