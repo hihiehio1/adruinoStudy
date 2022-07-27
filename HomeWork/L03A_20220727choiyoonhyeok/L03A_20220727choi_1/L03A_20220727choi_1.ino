@@ -37,13 +37,11 @@ if(currentMillis - previousMillis >= 1000)
   {
     ledState1=HIGH;
     ledState2=LOW;
-    ledState3=LOW;
   }
-  else if
+  else
   {
     ledState1=LOW;
     ledState2=HIGH;
-    ledState3=LOW;
   }
   digitalWrite(L1,ledState1);
   digitalWrite(L2,ledState2);
@@ -51,14 +49,13 @@ if(currentMillis - previousMillis >= 1000)
 // L1 L2 점멸
 
 
-if(digitalRead(sw)==HIGH)
+if(digitalRead(sw))
 { 
-  digitalWrite(L3,(i%3)==2);
+  digitalWrite(L3,HIGH);
 }
 else
 {
   digitalWrite(L3,LOW);
 }
-i++;
 }
 // L3 점멸
