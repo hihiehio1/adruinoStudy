@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<!-- saved from url=(0087)https://service.iamport.kr/payments/ready/imp91184008/paypal/support_api1.liveklass.com -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+		<title>
+		Payments	</title>
+	<script type="text/javascript" src="./json3.min.js.다운로드"></script><script type="text/javascript" src="./jquery-1.10.2.min.js.다운로드"></script></head>
+<body style="">
+	<div id="container">
+		<div id="header">
+		</div>
+		<div id="content">
+
+			
+			<style>
+#paypal-closure {display: none;}
+
+html,body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	position:relative;
+}
+.msg {
+	opacity: .4;
+	width:240px;
+	height:200px;
+	position: absolute;
+	top:50%;
+	left: 50%;
+	margin-left:-120px;
+	margin-top: -100px;
+	z-index: 2;
+	text-align: center;
+	line-height: 120%;
+	font-weight: normal;
+	letter-spacing: -0.02rem;
+	color:#fff;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.msg .img {
+	width:80px;
+}
+.msg .main {
+	font-size:18px;
+	padding:5px 0 15px 0;
+}
+.msg .sub {
+	font-size: 0.7rem;
+}
+.msg .sub a {
+	text-decoration: none;
+	color:#fff;
+	border-bottom: 1px dotted #fff;
+	padding-bottom: 1px;
+}
+.msg .line {
+	border-top:1px solid #ccc;
+	width:200px;
+	margin:0 auto;
+	height: 20px;
+}
+.bg {
+	position: absolute;
+	background-color: #000;
+	opacity: 0.7;
+	width:100%;
+	height: 100%;
+	z-index: 1;
+}
+
+.windows8 {
+	position: relative;
+	width: 26px;
+	height:26px;
+	margin:auto;
+	margin-bottom: 20px;
+}
+
+.windows8 .wBall {
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	opacity: 0;
+	transform: rotate(225deg);
+		-o-transform: rotate(225deg);
+		-ms-transform: rotate(225deg);
+		-webkit-transform: rotate(225deg);
+		-moz-transform: rotate(225deg);
+	animation: orbit 5.1425s infinite;
+		-o-animation: orbit 5.1425s infinite;
+		-ms-animation: orbit 5.1425s infinite;
+		-webkit-animation: orbit 5.1425s infinite;
+		-moz-animation: orbit 5.1425s infinite;
+}
+
+.windows8 .wBall .wInnerBall{
+	position: absolute;
+	width: 3px;
+	height: 3px;
+	background: rgb(255,255,255);
+	left:0px;
+	top:0px;
+	border-radius: 3px;
+}
+
+.windows8 #wBall_1 {
+	animation-delay: 1.126s;
+		-o-animation-delay: 1.126s;
+		-ms-animation-delay: 1.126s;
+		-webkit-animation-delay: 1.126s;
+		-moz-animation-delay: 1.126s;
+}
+
+.windows8 #wBall_2 {
+	animation-delay: 0.223s;
+		-o-animation-delay: 0.223s;
+		-ms-animation-delay: 0.223s;
+		-webkit-animation-delay: 0.223s;
+		-moz-animation-delay: 0.223s;
+}
+
+.windows8 #wBall_3 {
+	animation-delay: 0.4465s;
+		-o-animation-delay: 0.4465s;
+		-ms-animation-delay: 0.4465s;
+		-webkit-animation-delay: 0.4465s;
+		-moz-animation-delay: 0.4465s;
+}
+
+.windows8 #wBall_4 {
+	animation-delay: 0.6695s;
+		-o-animation-delay: 0.6695s;
+		-ms-animation-delay: 0.6695s;
+		-webkit-animation-delay: 0.6695s;
+		-moz-animation-delay: 0.6695s;
+}
+
+.windows8 #wBall_5 {
+	animation-delay: 0.903s;
+		-o-animation-delay: 0.903s;
+		-ms-animation-delay: 0.903s;
+		-webkit-animation-delay: 0.903s;
+		-moz-animation-delay: 0.903s;
+}
+
+@keyframes orbit {
+	0% {
+		opacity: 1;
+		z-index:99;
+		transform: rotate(180deg);
+		animation-timing-function: ease-out;
+	}
+
+	7% {
+		opacity: 1;
+		transform: rotate(300deg);
+		animation-timing-function: linear;
+		origin:0%;
+	}
+
+	30% {
+		opacity: 1;
+		transform:rotate(410deg);
+		animation-timing-function: ease-in-out;
+		origin:7%;
+	}
+
+	39% {
+		opacity: 1;
+		transform: rotate(645deg);
+		animation-timing-function: linear;
+		origin:30%;
+	}
+
+	70% {
+		opacity: 1;
+		transform: rotate(770deg);
+		animation-timing-function: ease-out;
+		origin:39%;
+	}
+
+	75% {
+		opacity: 1;
+		transform: rotate(900deg);
+		animation-timing-function: ease-out;
+		origin:70%;
+	}
+
+	76% {
+	opacity: 0;
+		transform:rotate(900deg);
+	}
+
+	100% {
+	opacity: 0;
+		transform: rotate(900deg);
+	}
+}
+
+@-o-keyframes orbit {
+	0% {
+		opacity: 1;
+		z-index:99;
+		-o-transform: rotate(180deg);
+		-o-animation-timing-function: ease-out;
+	}
+
+	7% {
+		opacity: 1;
+		-o-transform: rotate(300deg);
+		-o-animation-timing-function: linear;
+		-o-origin:0%;
+	}
+
+	30% {
+		opacity: 1;
+		-o-transform:rotate(410deg);
+		-o-animation-timing-function: ease-in-out;
+		-o-origin:7%;
+	}
+
+	39% {
+		opacity: 1;
+		-o-transform: rotate(645deg);
+		-o-animation-timing-function: linear;
+		-o-origin:30%;
+	}
+
+	70% {
+		opacity: 1;
+		-o-transform: rotate(770deg);
+		-o-animation-timing-function: ease-out;
+		-o-origin:39%;
+	}
+
+	75% {
+		opacity: 1;
+		-o-transform: rotate(900deg);
+		-o-animation-timing-function: ease-out;
+		-o-origin:70%;
+	}
+
+	76% {
+	opacity: 0;
+		-o-transform:rotate(900deg);
+	}
+
+	100% {
+	opacity: 0;
+		-o-transform: rotate(900deg);
+	}
+}
+
+@-ms-keyframes orbit {
+	0% {
+		opacity: 1;
+		z-index:99;
+		-ms-transform: rotate(180deg);
+		-ms-animation-timing-function: ease-out;
+	}
+
+	7% {
+		opacity: 1;
+		-ms-transform: rotate(300deg);
+		-ms-animation-timing-function: linear;
+		-ms-origin:0%;
+	}
+
+	30% {
+		opacity: 1;
+		-ms-transform:rotate(410deg);
+		-ms-animation-timing-function: ease-in-out;
+		-ms-origin:7%;
+	}
+
+	39% {
+		opacity: 1;
+		-ms-transform: rotate(645deg);
+		-ms-animation-timing-function: linear;
+		-ms-origin:30%;
+	}
+
+	70% {
+		opacity: 1;
+		-ms-transform: rotate(770deg);
+		-ms-animation-timing-function: ease-out;
+		-ms-origin:39%;
+	}
+
+	75% {
+		opacity: 1;
+		-ms-transform: rotate(900deg);
+		-ms-animation-timing-function: ease-out;
+		-ms-origin:70%;
+	}
+
+	76% {
+	opacity: 0;
+		-ms-transform:rotate(900deg);
+	}
+
+	100% {
+	opacity: 0;
+		-ms-transform: rotate(900deg);
+	}
+}
+
+@-webkit-keyframes orbit {
+	0% {
+		opacity: 1;
+		z-index:99;
+		-webkit-transform: rotate(180deg);
+		-webkit-animation-timing-function: ease-out;
+	}
+
+	7% {
+		opacity: 1;
+		-webkit-transform: rotate(300deg);
+		-webkit-animation-timing-function: linear;
+		-webkit-origin:0%;
+	}
+
+	30% {
+		opacity: 1;
+		-webkit-transform:rotate(410deg);
+		-webkit-animation-timing-function: ease-in-out;
+		-webkit-origin:7%;
+	}
+
+	39% {
+		opacity: 1;
+		-webkit-transform: rotate(645deg);
+		-webkit-animation-timing-function: linear;
+		-webkit-origin:30%;
+	}
+
+	70% {
+		opacity: 1;
+		-webkit-transform: rotate(770deg);
+		-webkit-animation-timing-function: ease-out;
+		-webkit-origin:39%;
+	}
+
+	75% {
+		opacity: 1;
+		-webkit-transform: rotate(900deg);
+		-webkit-animation-timing-function: ease-out;
+		-webkit-origin:70%;
+	}
+
+	76% {
+	opacity: 0;
+		-webkit-transform:rotate(900deg);
+	}
+
+	100% {
+	opacity: 0;
+		-webkit-transform: rotate(900deg);
+	}
+}
+
+@-moz-keyframes orbit {
+	0% {
+		opacity: 1;
+		z-index:99;
+		-moz-transform: rotate(180deg);
+		-moz-animation-timing-function: ease-out;
+	}
+
+	7% {
+		opacity: 1;
+		-moz-transform: rotate(300deg);
+		-moz-animation-timing-function: linear;
+		-moz-origin:0%;
+	}
+
+	30% {
+		opacity: 1;
+		-moz-transform:rotate(410deg);
+		-moz-animation-timing-function: ease-in-out;
+		-moz-origin:7%;
+	}
+
+	39% {
+		opacity: 1;
+		-moz-transform: rotate(645deg);
+		-moz-animation-timing-function: linear;
+		-moz-origin:30%;
+	}
+
+	70% {
+		opacity: 1;
+		-moz-transform: rotate(770deg);
+		-moz-animation-timing-function: ease-out;
+		-moz-origin:39%;
+	}
+
+	75% {
+		opacity: 1;
+		-moz-transform: rotate(900deg);
+		-moz-animation-timing-function: ease-out;
+		-moz-origin:70%;
+	}
+
+	76% {
+	opacity: 0;
+		-moz-transform:rotate(900deg);
+	}
+
+	100% {
+	opacity: 0;
+		-moz-transform: rotate(900deg);
+	}
+}
+</style>
+<script type="text/javascript">
+function _response(action, data, source, origin) {
+	var msg = {
+		action : action,
+		data : data
+	};
+	var obj = JSON.stringify(msg); //받는 쪽에서 parse하므로 string이라도 stringify해서 넘김
+
+	source.postMessage(obj, '*');
+}
+
+(function(window) {
+	var document = window.document;
+
+	function isProxyWay(version) {
+		return version === "1.1.0" || version === "1.1.1" || version === "1.1.2" || version === "1.1.3" || version === "1.1.4" || version === "1.1.5" || version === "1.1.6" || version === "1.1.7" || version === "1.1.8" || version === "1.2.0";
+	}
+
+	function openGuideLayer() {
+		$('#paypal-closure').show();
+	}
+
+	function closeGuideLayer() {
+		$('#paypal-closure').hide();
+	}
+
+	function attachLayerCloser(handler) {
+		$('#paypal-closure .msg .close').click(function() {
+			handler.call(null);
+
+			return false;
+		});
+	}
+
+	function do_payment(user_code, imp_uid, merchant_uid, request_id, source, origin) {
+		var frm = document.forms["PaypalForm"];
+		frm.submit();
+	}
+
+	function do_popup_payment(payUrl, impUid, requestId, source, origin) {
+		_response('paypal.modal', {
+			impUid : impUid,
+			redirectUrl : payUrl
+		}, source, origin);
+	}
+
+	function _currency(currency) {
+		if ( typeof currency != 'string' )	return 'USD';
+
+		return currency.toUpperCase();
+	}
+
+	function on_message(e) {
+		var obj = {},
+			action = null,
+			data = null,
+			request_id = null;
+		var source = e.source;
+		var origin = e.origin;
+
+		try {
+			obj = JSON.parse(e.data);
+			action = obj.action;
+			data = obj.data || {};
+			request_id = data.request_id;
+			origin = obj.origin || origin;
+		} catch(e) {}
+
+		if ( action == 'payment' ) {
+			var custom_data = JSON.stringify(data.custom_data),
+				optional = data.optional || {};
+
+			openGuideLayer();
+
+			$.ajax({
+				type : 'POST',
+				url : '/paypal_payments/prepare.json',
+				dataType : 'json',
+				data : {
+					channel : 'pc',
+					provider : 'paypal',
+					pay_method : data.pay_method, //service DB에는 원본
+					escrow : data.escrow,
+					amount : data.amount,
+					vat : data.vat,
+					currency : _currency( data.currency ),
+					name : data.name,
+					merchant_uid : data.merchant_uid,
+					user_code : 'imp91184008',
+					tier_code : data.tier_code,
+					request_id : request_id,
+					pg_id : 'support_api1.liveklass.com',
+					buyer_name : data.buyer_name,
+					buyer_email : data.buyer_email,
+					buyer_tel : data.buyer_tel,
+					buyer_addr : data.buyer_addr,
+					buyer_postcode : data.buyer_postcode,
+					origin : origin,
+					m_redirect_url : data.m_redirect_url,
+					custom_data : custom_data,
+					notice_url : data.notice_url,
+					card : data.card,
+					language : data.language,
+					_extra : {
+						no_shipping : (optional.no_shipping || false),
+						shipping_amount : (optional.shipping_amount || 0),
+						ship_to_name : optional.ship_to_name || "",
+						ship_to_street : optional.ship_to_street || "",
+						ship_to_street2 : optional.ship_to_street2 || "",
+						ship_to_city : optional.ship_to_city || "",
+						ship_to_state : optional.ship_to_state || "",
+						ship_to_zip : optional.ship_to_zip || "",
+						ship_to_countrycode : optional.ship_to_countrycode || "",
+						ship_to_phonenum : optional.ship_to_phonenum || "",
+						popup : data.popup
+					}
+				},
+				error : function(xhr, status, err) {
+					return _response('', {
+						success:false,
+						request_id:request_id,
+						imp_uid: null,
+						merchant_uid: data.merchant_uid,
+						error_code:'HTTP_ERROR:' + xhr.status,
+						error_msg:'Connection Problem'
+					}, source, origin);
+				}
+			}).done(function(rsp) {
+				attachLayerCloser(function() {
+					_response('', {
+						success:false,
+						request_id:request_id,
+						imp_uid: rsp.data.imp_uid,
+						merchant_uid: data.merchant_uid,
+						error_code:'STOP',
+						error_msg:'Payment Cancelled'
+					}, source, origin);
+				});
+
+				if ( rsp.code == 0 ) {
+					var frm = document.forms["PaypalForm"];
+					frm.action = rsp.data.paypal_url;
+					frm.elements['token'].value = rsp.data.token;
+
+					if ( isProxyWay(obj.version) ) {
+						var payUrl = rsp.data.paypal_url + "?cmd=_express-checkout&token=" + rsp.data.token;
+						do_popup_payment(payUrl, rsp.data.imp_uid, request_id, source, origin);
+					} else {
+						do_payment('imp91184008', rsp.data.imp_uid, data.merchant_uid, request_id, source, origin);
+					}
+				} else {
+					_response('', {
+						success:false,
+						request_id:request_id,
+						imp_uid: rsp.data.imp_uid,
+						merchant_uid: data.merchant_uid,
+						error_code:rsp.data.error_code,
+						error_msg:rsp.data.error_msg
+					}, source, origin);
+				}
+			});
+		} else if ( action === 'communicate' && data ) {
+			if ( data.result === 'check.closing' ) { //popup 닫기가 감지된 경우. 서버체크 필요
+				location.href = '/paypal_payments/closing/' + data.imp_uid + '/' + request_id;//최초 request의 request_id가 postMessage로 전달됨
+			}
+		}
+	}
+
+	if (window.addEventListener) {  // all browsers except IE before version 9
+		window.addEventListener ("message", on_message, false);
+	} else {
+		if (window.attachEvent) {   // IE before version 9
+			window.attachEvent("onmessage", on_message);
+		}
+	}
+}).call({}, window);
+</script>
+<form method="GET" name="PaypalForm" id="PaypalForm">
+	<input type="hidden" name="token" value="">
+	<input type="hidden" name="cmd" value="_express-checkout">
+</form>
+<div id="paypal-closure">
+	<div class="bg"></div>
+
+	<div class="msg">
+		<div class="windows8">
+			<div class="wBall" id="wBall_1">
+				<div class="wInnerBall"></div>
+			</div>
+			<div class="wBall" id="wBall_2">
+				<div class="wInnerBall"></div>
+			</div>
+			<div class="wBall" id="wBall_3">
+				<div class="wInnerBall"></div>
+			</div>
+			<div class="wBall" id="wBall_4">
+				<div class="wInnerBall"></div>
+			</div>
+			<div class="wBall" id="wBall_5">
+				<div class="wInnerBall"></div>
+			</div>
+		</div>
+		<img src="./logo_paypal.png" alt="" class="img">
+		<div class="main">Processing Payment</div>
+		<div class="line"></div>
+		<div class="sub">If you have any problem during payment, <br><a href="https://service.iamport.kr/payments/ready/imp91184008/paypal/support_api1.liveklass.com#" class="close">Click Here</a> and try again please.</div>
+	</div>
+</div>
+		</div>
+		<div id="footer">
+		</div>
+	</div>
+
+
+</body></html>

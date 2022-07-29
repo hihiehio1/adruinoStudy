@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)https://service.iamport.kr/payments/ready/imp91184008/naverpay -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+		<title>
+		Payments	</title>
+	<script type="text/javascript" src="./json3.min.js.다운로드"></script><script type="text/javascript" src="./jquery-1.10.2.min.js.다운로드"></script></head>
+<body style="">
+	<div id="container">
+		<div id="header">
+		</div>
+		<div id="content">
+
+			
+			<script type="text/javascript">
+(function(window) {
+	function _response(action, data, source, origin) {
+		var msg = {
+			action : action,
+			data : data
+		};
+		var obj = JSON.stringify(msg); //받는 쪽에서 parse하므로 string이라도 stringify해서 넘김
+
+		source.postMessage(obj, '*');
+	}
+
+	function on_message(e) {
+		var obj = {};
+		try { 
+			obj = JSON.parse(e.data);
+		} catch(e) {}
+		var source = e.source;
+		var origin = e.origin;
+		var action = obj.action;
+		var data = obj.data;
+		var request_id = data.request_id;
+
+		_response('', {success:false, request_id:request_id, error_code:'NOT_READY', error_msg:'등록된 사용자가 아니거나, 아임포트 관리자 페이지에 설정된 PG정보가 없습니다.'}, source, origin);
+	}
+
+	if (window.addEventListener) {  // all browsers except IE before version 9
+		window.addEventListener ("message", on_message, false);
+	} else {
+		if (window.attachEvent) {   // IE before version 9
+			window.attachEvent("onmessage", on_message);
+		}
+	}
+}).call({}, window);
+</script>		</div>
+		<div id="footer">
+		</div>
+	</div>
+
+
+</body></html>

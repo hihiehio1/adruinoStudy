@@ -1,0 +1,337 @@
+.vue__time-picker input.display-time {
+    width: 30em !important;
+    height: 3.4em !important;
+    padding: .3em .5em;
+    font-size: 1rem;
+}
+
+.vue__time-picker {
+    display: inline-block;
+    position: relative;
+    font-size: 1em;
+    width: 30em !important;
+    font-family: sans-serif;
+    vertical-align: middle;
+}
+
+
+.vue__time-picker .dropdown .select-list {
+    width: 30em !important;
+    height: 13em !important;
+    z-index: 999999999 !important;
+}
+
+.vue__time-picker .dropdown {
+    position: absolute;
+    z-index: 999999999 !important;
+    width: 30em !important;
+    height: 13em !important;
+}
+
+.timepicker-custom {
+    position: relative;
+}
+
+.timepicker-custom .vue__time-picker {
+    width: 180px !important;
+}
+
+.timepicker-custom .vue__time-picker input.display-time {
+    width: 180px !important;
+    height: 40px !important;
+    /* padding: .3em .5em; */
+    padding-left: 40px;
+    padding-right: 30px;
+    font-size: 1rem;
+    border: solid 1px #d2dce4;
+    border-radius: 3px;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.05);
+}
+
+.timepicker-custom .vue__time-picker .dropdown .select-list {
+    width: 180px !important;
+    height: 13em !important;
+    z-index: 999999999 !important;
+}
+
+.timepicker-custom .vue__time-picker .dropdown {
+    position: absolute;
+    z-index: 999999999 !important;
+    width: 180px !important;
+    height: 13em !important;
+    top: 52px !important;
+}
+
+.timepicker-custom .vue__time-picker-dropdown ul li:not([disabled]).active, .vue__time-picker-dropdown ul li:not([disabled]).active:focus, .vue__time-picker-dropdown ul li:not([disabled]).active:hover, .vue__time-picker .dropdown ul li:not([disabled]).active, .vue__time-picker .dropdown ul li:not([disabled]).active:focus, .vue__time-picker .dropdown ul li:not([disabled]).active:hover{
+    background-color: #2e8cff !important;
+}
+
+.videoElement
+{
+    /*transform: rotateY(180deg);*/
+    /*-webkit-transform:rotateY(180deg); !* Safari and Chrome *!*/
+    /*-moz-transform:rotateY(180deg); !* Firefox *!*/
+}
+
+.faceElement
+{
+    transform: rotateY(180deg);
+    -webkit-transform:rotateY(180deg); /* Safari and Chrome */
+    -moz-transform:rotateY(180deg); /* Firefox */
+}
+
+.video-full
+{
+    object-fit: cover !important;
+}
+
+[class*='live_teacher_'] {
+    width: 248px;
+}
+
+.sample
+{
+    overflow-y:hidden;
+}
+
+.window_item.full {
+    width: 100% !important;
+    z-index: 4;
+    left: 0 !important;
+    height: 100% !important;
+    top: 0 !important;
+}
+
+.realive_room_wrap .window_teacher_wrap video {
+    object-fit: contain !important;
+}
+
+
+.map_preview{
+
+    height: 300px !important;
+}
+
+.fr-view {
+    /* font-size: 15px; */
+}
+.fr-view {
+    /* padding: 10px; */
+}
+
+.fr-box.fr-basic .fr-element.fr-view {
+    font-size: 1rem;
+    line-height: normal;
+}
+
+
+
+.mission_post_content {
+    font-size: 15px;
+}
+.mission_post_content {
+    padding: 10px;
+}
+
+.fr-view ol {
+    padding-left: 20px;
+}
+
+.fr-view ul {
+    padding-left: 20px;
+}
+
+.fr-view ol li {
+    padding-left: 10px;
+    list-style: decimal !important;
+    list-style-type: decimal !important;
+    margin-bottom: 10px !important;
+}
+
+.fr-view ul li {
+    list-style: disc !important;
+    list-style-type: disc !important;
+    margin-bottom: 10px !important;
+}
+
+.fr-view em {
+    font-style: italic;
+}
+
+.fr-view strong {
+    font-weight: bold;
+}
+
+.form_mission_write {
+    background-color: #e6e6e6 !important;
+    margin-bottom: 100px;
+}
+
+.form_mission_write p {
+    margin-bottom: 10px !important;
+}
+
+.form_mission_write table {
+    border: 1px solid #6f7180;
+    border-collapse: collapse;
+
+}
+
+.form_mission_write th, td {
+    border: 1px solid #6f7180;
+    padding: 5px;
+
+}
+
+.fr-view p {
+    /* margin-bottom: 10px !important; */
+}
+
+.fr-view p {
+    /* margin-bottom: 10px !important; */
+}
+
+.fr-view a {
+    color: blue !important;
+}
+
+.fr-view a:hover {
+    text-decoration: underline;
+}
+
+.cm_post_view p {
+    margin-bottom: 10px !important;
+}
+
+.form_mission_write a {
+    color: blue;
+}
+
+.cm_post_view strong {
+    font-weight: bold !important;
+}
+
+.cm_post_view em {
+    font-style: italic !important;
+}
+
+.cm_post_view ol {
+    padding-left: 20px;
+}
+
+.cm_post_view ul {
+    padding-left: 20px;
+}
+
+.cm_post_view {
+    font-size: 15px;
+}
+.cm_post_view ol li {
+    padding-left: 10px;
+    list-style: decimal !important;
+    list-style-type: decimal !important;
+    margin-bottom: 10px !important;
+}
+
+.cm_post_view a {
+    color: blue;
+}
+
+.cm_post_view ul li {
+    list-style: disc !important;
+    list-style-type: disc !important;
+    margin-bottom: 10px !important;
+}
+
+.target-mission {
+    border-color: red;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.header_bi_test a{display:inline-block;width:130px;height:100%;background:url('../images/btn_arrow_dropdown_s.png') center center no-repeat;background-size: 100% auto;vertical-align: middle;margin-left: 20px;}
+
+
+.class_user_list li{float: left;width: 25%;margin-left: 2.6%;margin-top:15px;text-overflow: initial;}
+.class_user_list li .btn_user_delete{position: absolute; right: 0;background-color: white;padding-left: 5px;}
+.btn_plus{font-weight:bold; font-size:15pt}
+/*#zmmtg-root {*/
+/*    background-color: unset !important;*/
+/*}*/
+
+
+.float{
+    position: fixed;
+    /* width: 104px; */
+    height: 48px;
+    bottom: 70px;
+    right: 10px;
+    z-index: 99999;
+    margin-right: 20px;
+    /* filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.05)); */
+}
+
+.float img {
+    width : 60px;
+    height : 60px;
+}
+
+@media (max-width: 767px) {
+    .float img {
+        width : 48px;
+        height : 48px;
+    }
+}
+
+.side_curriculum_table {
+    height: 60px !important;
+}
+
+
+.side_curriculum_item > button.active + div {
+    max-height: 7000px;
+}
+
+.class_view_box_drop_item > button.active + div {
+    max-height: 7000px;
+}
+
+
+.popup_normal .popup_m {
+    max-height: calc(100vh - 300px);
+     overflow-y: unset !important;
+}
+
+
+
+/* 20210115 매출관리 : 주문상세내역 팝업 */
+
+.popup_order_add.popup_normal .popup_m {
+    overflow-y: auto !important;
+}
+
+@media only screen and (max-width: 767px){
+    .popup_normal .popup_m {
+        max-height: calc(100vh - 110px);
+    }
+}
+
+@media (max-width: 767px) {
+    .timepicker-custom .vue__time-picker input.display-time {
+        width: 110px !important;
+        font-size: 0.875rem;
+    }
+
+    .timepicker-custom .vue__time-picker {
+        width: 110px !important;
+    }
+
+    .timepicker-custom .vue__time-picker .dropdown .select-list {
+        width: 150px !important;
+    }
+
+    .timepicker-custom .vue__time-picker .dropdown {
+        width: 150px !important;
+    }
+}
+
