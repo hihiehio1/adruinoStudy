@@ -1,0 +1,31 @@
+// main.c
+#define  _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+void exchange();
+
+int a, b;
+
+void main()
+{
+	printf("a의 값을 입력 : ");
+	scanf_s("%d", &a);
+	printf("b의 값을 입력 : ");
+	scanf_s("%d", &b);
+
+	exchange();
+
+	printf("\n바뀐 값 a는 %d, b는 %d \n", a, b);
+}
+
+// exchange.c
+extern int a, b;
+
+void exchange()
+{
+	int tmp;
+
+	tmp = a;
+	a = b;
+	b = tmp;
+}

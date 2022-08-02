@@ -1,0 +1,23 @@
+// main.c
+#include <stdio.h>
+
+void func();
+
+int a;
+
+void main()
+{
+   a = 100;
+
+   func();
+}
+
+// func1.c
+#include <stdio.h>
+
+extern int a;
+
+void func()
+{
+   printf("extern int a°ª ==> %d\n", a);
+}
