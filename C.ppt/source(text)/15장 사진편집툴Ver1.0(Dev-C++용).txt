@@ -1,0 +1,122 @@
+#include <stdio.h>
+
+void print_menu();
+
+void negative(); // 이미지 반전 함수
+void mirror1();  // 이미지 좌우 대칭 함수
+void mirror2();  // 이미지 상하 대칭 함수
+
+// 512x512 raw 이미지 파일
+const char *fname = "c:\\temp\\bird.raw";
+
+void main()
+{
+	char select=0;
+	puts(" \n### 사진 편집 툴 Ver 1.0 (Dev-C++ 전용) ### \n\n");
+
+	while( select != 4 )
+	{
+		print_menu();
+		select = getch();
+
+		switch(select)
+		{
+		case '1' : negative(); 
+			break;
+		case '2' : mirror1(); 
+			break;
+		case '3' : mirror2(); 
+			break;
+		case '4' : return 0; 
+			break;
+		default : printf( "\n 잘못 입력했어요. 다시 선택하세요.\n") ;
+		}
+	}
+
+	return 0;
+}
+
+// 사용자의 선택을 위한 메뉴 출력
+void print_menu()
+{
+	printf("\n");
+	printf("1. 영상 반전 \n");
+	printf("2. 영상 좌우 대칭 \n");
+	printf("3. 영상 상하 대칭 \n");
+	printf("4. 끝내기 \n"); 
+}
+
+// 이미지를 반전시키는 함수
+void negative()
+{
+	int i, k;
+	unsigned char oriImage[512][512], outImage[512][512] ;
+
+	FILE *rfp, *wfp;
+
+	// 이미지 읽기
+	rfp = fopen(fname, "rb");
+	fread(oriImage, sizeof(char), 512*512, rfp);
+	fclose(rfp);
+
+	// 이미지 반전
+	for(i = 0 ; i < 512 ; i++)
+		for(k=0 ; k < 512 ; k++)
+			outImage[i][k] = 255 - oriImage[i][k];
+    
+	wfp = fopen("c:\\temp\\negative.raw", "wb");
+	fwrite(outImage, sizeof(char), 512*512, wfp);
+	fclose(wfp);
+
+	puts("\n -- 반전된 이미지를 c:\\temp\\negative.raw로 저장완료 -- \n");
+}
+
+// 이미지를 좌우대칭시키는 함수
+void mirror1()
+{
+	int i, k;
+	unsigned char oriImage[512][512], outImage[512][512] ;
+
+	FILE *rfp, *wfp;
+
+	// 이미지 읽기
+	rfp = fopen(fname, "rb");
+	fread(oriImage, sizeof(char), 512*512, rfp);
+	fclose(rfp);
+
+	// 이미지를 좌우로 대칭
+	for(i=0 ; i < 512 ; i++)
+		for(k=0 ; k < 512 ; k++)
+			outImage[i][k] = oriImage[i][511-k];
+    
+	wfp = fopen("c:\\temp\\mirror1.raw", "wb");
+	fwrite(outImage, sizeof(char), 512*512, wfp);
+	fclose(wfp);
+
+	puts("\n --좌우대칭된 이미지를 c:\\temp\\mirror1.raw로 저장완료 -- \n");
+}
+
+// 이미지를 상하대칭시키는 함수
+void mirror2()
+{
+	int i, k;
+	unsigned char oriImage[512][512], outImage[512][512] ;
+
+	FILE *rfp, *wfp;
+
+	// 이미지 읽기
+	rfp = fopen(fname, "rb");
+	fread(oriImage, sizeof(char), 512*512, rfp);
+	fclose(rfp);
+
+	// 이미지를 상하로 대칭
+	for(i=0 ; i < 512 ; i++)
+		for(k=0 ; k < 512 ; k++)
+			outImage[i][k] = oriImage[511-i][k];
+    
+	wfp = fopen("c:\\temp\\mirror2.raw", "wb");
+	fwrite(outImage, sizeof(char), 512*512, wfp);
+	fclose(wfp);
+
+	puts("\n --상하대칭된 이미지를 c:\\temp\\mirror2.raw로 저장완료 -- \n");
+}

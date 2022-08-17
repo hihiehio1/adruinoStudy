@@ -1,0 +1,23 @@
+#define  _CRT_SECURE_NO_WARNINGS
+#include <string.h>
+#include <stdio.h>
+
+void main()
+{
+   char ss[100];
+   char tt[100];
+   int count, i;
+   
+   printf("문자열을 입력하세요 : ");
+   scanf("%s", ss);
+
+   count = strlen(ss);
+      
+   for(i=0 ; i<count ; i++)
+   {
+      tt[i] = ss[count-(i+1)];
+   }
+   tt[count] = '\0';
+
+   printf("내용을 거꾸로 출력 ==> %s \n", tt);
+}

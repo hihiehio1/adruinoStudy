@@ -1,0 +1,32 @@
+// func.h
+#include <stdio.h>
+
+void func1() ;
+void func2() ;
+
+// main.c
+#include "func.h"
+
+void main()
+{
+   func1();
+   func2();
+}
+
+
+// func1.c
+#include "func.h"
+
+void func1()
+{
+   printf("func1() 함수를 실행합니다. \n");
+}
+
+
+// func2.c
+#include "func.h"
+
+void func2()
+{
+   printf("func2() 함수를 실행합니다. \n");
+}
